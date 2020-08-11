@@ -1,10 +1,10 @@
+#!/usr/bin/env node
 require('reflect-metadata');
 const { join } = require('path');
 const { Ioc, Registrar } = require('@adonisjs/fold');
 const { Application } = require('@adonisjs/application');
 const { Kernel, Manifest } = require('@adonisjs/ace');
 const nested = require('nested-property');
-// const databaseConfig = require('../../lucidy');
 const databaseConfig = {
   connection: 'pg',
   client: 'pg',
