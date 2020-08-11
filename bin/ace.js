@@ -63,7 +63,7 @@ ioc.singleton('Adonis/Core/Application', () => {
   const namespacesMap = new Map();
 
   return {
-    appRoot: join(__dirname),
+    appRoot: join(__dirname, '..', '..', '..'),
     configPath: () => '',
     namespacesMap,
   };
