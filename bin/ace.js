@@ -76,9 +76,13 @@ const config = Object.assign(
   }
 );
 
-registrar
-  .useProviders(['@adonisjs/profiler', '@adonisjs/logger', '@adonisjs/events'])
-  .register();
+ioc.singleton('Adonis/Core/Config', () => {
+  return {
+    get(key, defaultValue) {
+      return nested.get(config, key) || defaultValue;
+    },
+  };
+});
 
 ioc.singleton('Adonis/Core/Application', () => {
   const namespacesMap = new Map();
@@ -90,48 +94,14 @@ ioc.singleton('Adonis/Core/Application', () => {
   };
 });
 
-ioc.singleton('Adonis/Core/Config', () => {
-  return {
-    get(key, defaultValue) {
-      return nested.get(config, key) || defaultValue;
-    },
-  };
-});
-
-ioc.singleton('Adonis/Lucid/Database', () => {
-  const logger = ioc.use('Adonis/Core/Logger');
-  const profiler = ioc.use('Adonis/Core/Profiler');
-  const emitter = ioc.use('Adonis/Core/Event');
-
-  const { Database } = require('@adonisjs/lucid/build/src/Database');
-  return new Database(config.database, logger, profiler, emitter);
-});
-
-ioc.singleton('Adonis/Lucid/Orm', () => {
-  const ormConfig = Config;
-
-  BaseModel.$adapter = new Adapter(ioc.use('Adonis/Lucid/Database'));
-  BaseModel.$container = ioc;
-  BaseModel.$configurator = Object.assign({}, ormConfig, config.database.orm);
-
-  return {
-    BaseModel,
-    scope,
-    ...decorators,
-  };
-});
-
-ioc.singleton('Adonis/Lucid/Schema', () => {
-  return Schema;
-});
-
-ioc.singleton('Adonis/Lucid/Factory', () => {
-  return new FactoryManager();
-});
-
-ioc.singleton('Adonis/Lucid/Seeder', () => {
-  return BaseSeeder;
-});
+registrar
+  .useProviders([
+    '@adonisjs/profiler',
+    '@adonisjs/logger',
+    '@adonisjs/events',
+    '@adonisjs/lucid',
+  ])
+  .register();
 
 const application = new Application(
   join(__dirname, '..', '..', '..'),
