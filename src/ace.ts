@@ -116,7 +116,7 @@ const application = new Application(
 
 const kernel = new Kernel(application);
 
-const manifest = new Manifest(join(__dirname, '..'));
+const manifest = new Manifest(join(__dirname));
 
 kernel.flag(
   'help',
