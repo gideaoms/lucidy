@@ -5,16 +5,6 @@ const { Ioc, Registrar } = require('@adonisjs/fold');
 const { Application } = require('@adonisjs/application');
 const { Kernel, Manifest } = require('@adonisjs/ace');
 const { iocTransformer } = require('@adonisjs/ioc-transformer');
-const {
-  BaseSeeder,
-  FactoryManager,
-  Schema,
-  Adapter,
-  scope,
-  decorators,
-  BaseModel,
-  Config,
-} = require('@adonisjs/lucid');
 const { register } = require('ts-node');
 const nested = require('nested-property');
 const databaseConfig = {
@@ -31,7 +21,6 @@ const databaseConfig = {
 };
 
 register({
-  transpileOnly: true,
   transformers: {
     after: [
       iocTransformer(require('typescript/lib/typescript'), { aliases: {} }),
