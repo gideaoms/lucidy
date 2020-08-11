@@ -7,7 +7,7 @@
     "build"
   ],
   "bin": {
-    "ace": "./bin/ace.js"
+    "ace": "./build/ace.js"
   },
   "scripts": {
     "build": "tsc && copyfiles ace-manifest.json build",
