@@ -87,7 +87,7 @@ ioc.singleton('Adonis/Lucid/Database', () => {
 });
 
 const application = new Application(
-  __dirname,
+  join(__dirname, '..', '..', '..'),
   ioc,
   {
     namespaces: {
