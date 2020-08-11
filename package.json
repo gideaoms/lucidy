@@ -10,7 +10,7 @@
     "ace": "./build/ace.js"
   },
   "scripts": {
-    "build": "tsc && copyfiles src/ace-manifest.json .adonisrc.json build",
+    "build": "tsc && copyfiles src/ace-manifest.json src/.adonisrc.json build",
     "prepare": "yarn build"
   },
   "devDependencies": {
