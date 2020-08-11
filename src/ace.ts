@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-require('reflect-metadata');
-const { join } = require('path');
-const { Ioc, Registrar } = require('@adonisjs/fold');
-const { Application } = require('@adonisjs/application');
-const { Kernel, Manifest } = require('@adonisjs/ace');
-const { iocTransformer } = require('@adonisjs/ioc-transformer');
-const { register } = require('ts-node');
-const nested = require('nested-property');
+import 'reflect-metadata';
+import { join } from 'path';
+import { Ioc, Registrar } from '@adonisjs/fold';
+import { Application } from '@adonisjs/application';
+import { Kernel, Manifest } from '@adonisjs/ace';
+import { iocTransformer } from '@adonisjs/ioc-transformer';
+import { register } from 'ts-node';
+import { RcFile } from '@ioc:Adonis/Core/Application';
+import typescript from 'typescript/lib/typescript';
+import nested from 'nested-property';
+
 const databaseConfig = {
   connection: 'pg',
   client: 'pg',
@@ -14,23 +17,20 @@ const databaseConfig = {
   port: 3001,
   user: 'postgres',
   password: '123456',
-  database: 'postgres',
-  migrations: 'src/database/migrations',
-  models: 'src/database/models',
-  seeders: 'src/database/seeders',
+  database: 'postgres' || 'database',
+  migrations: 'src/database/migrations' || 'database/migrations',
+  models: 'src/database/models' || 'database/models',
+  seeders: 'src/database/seeders' || 'database/seeders',
 };
 
 register({
   transformers: {
-    after: [
-      iocTransformer(require('typescript/lib/typescript'), { aliases: {} }),
-    ],
+    after: [iocTransformer(typescript, { aliases: {} } as RcFile)],
   },
 });
 
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);
-const defaultMigrations = 'database/migrations';
 const appRoot = join(__dirname, '..', '..', '..');
 const config = Object.assign(
   {
@@ -58,7 +58,7 @@ const config = Object.assign(
           },
           healthCheck: false,
           migrations: {
-            paths: [databaseConfig.migrations || defaultMigrations],
+            paths: [databaseConfig.migrations],
           },
         },
       },
@@ -70,7 +70,7 @@ global[Symbol.for('ioc.use')] = ioc.use.bind(ioc);
 
 ioc.singleton('Adonis/Core/Config', () => {
   return {
-    get(key, defaultValue) {
+    get(key: string, defaultValue: any) {
       return nested.get(config, key) || defaultValue;
     },
   };
@@ -103,12 +103,12 @@ const application = new Application(
       models: 'Models',
     },
     aliases: {
-      Models: databaseConfig.models || 'database/models',
+      Models: databaseConfig.models,
     },
     directories: {
-      database: databaseConfig.database || 'database',
-      migrations: databaseConfig.models || defaultMigrations,
-      seeds: databaseConfig.seeders || 'database/seeders',
+      database: databaseConfig.database,
+      migrations: databaseConfig.migrations,
+      seeds: databaseConfig.seeders,
     },
   },
   {}

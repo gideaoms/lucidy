@@ -1,7 +1,7 @@
 {
   "name": "lucidy",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "ace-manifest.json",
   "license": "MIT",
   "files": [
     "build"
@@ -10,7 +10,8 @@
     "ace": "./bin/ace.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && copyfiles ace-manifest.json build",
+    "prepare": "yarn build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.9.0",
@@ -41,6 +42,7 @@
     "@adonisjs/lucid": "^8.3.1",
     "@adonisjs/mrm-preset": "^2.4.0",
     "@adonisjs/profiler": "^4.0.1",
+    "copyfiles": "^2.3.0",
     "has-yarn": "^2.1.0",
     "nested-property": "^2.0.1",
     "typescript": "^3.9.7"
