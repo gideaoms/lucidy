@@ -19,6 +19,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.0.5",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
   "peerDependencies": {
@@ -29,6 +30,7 @@
     "@adonisjs/application": "^2.0.0",
     "@adonisjs/events": "^4.0.1",
     "@adonisjs/fold": "^6.4.0",
+    "@adonisjs/ioc-transformer": "^1.0.2",
     "@adonisjs/logger": "^2.1.0",
     "@adonisjs/lucid": "^8.3.1",
     "@adonisjs/profiler": "^4.0.1",

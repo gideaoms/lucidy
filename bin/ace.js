@@ -4,6 +4,8 @@ const { join } = require('path');
 const { Ioc, Registrar } = require('@adonisjs/fold');
 const { Application } = require('@adonisjs/application');
 const { Kernel, Manifest } = require('@adonisjs/ace');
+const { iocTransformer } = require('@adonisjs/ioc-transformer');
+const { register } = require('ts-node');
 const nested = require('nested-property');
 const databaseConfig = {
   connection: 'pg',
@@ -17,6 +19,15 @@ const databaseConfig = {
   models: 'src/database/models',
   seeders: 'src/database/seeders',
 };
+
+register({
+  transpileOnly: true,
+  transformers: {
+    after: [
+      iocTransformer(require('typescript/lib/typescript'), { aliases: {} }),
+    ],
+  },
+});
 
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);
