@@ -5,6 +5,16 @@ const { Ioc, Registrar } = require('@adonisjs/fold');
 const { Application } = require('@adonisjs/application');
 const { Kernel, Manifest } = require('@adonisjs/ace');
 const { iocTransformer } = require('@adonisjs/ioc-transformer');
+const {
+  BaseSeeder,
+  FactoryManager,
+  Schema,
+  Adapter,
+  scope,
+  decorators,
+  BaseModel,
+  Config,
+} = require('@adonisjs/lucid');
 const { register } = require('ts-node');
 const nested = require('nested-property');
 const databaseConfig = {
@@ -95,6 +105,32 @@ ioc.singleton('Adonis/Lucid/Database', () => {
 
   const { Database } = require('@adonisjs/lucid/build/src/Database');
   return new Database(config.database, logger, profiler, emitter);
+});
+
+ioc.singleton('Adonis/Lucid/Orm', () => {
+  const ormConfig = Config;
+
+  BaseModel.$adapter = new Adapter(ioc.use('Adonis/Lucid/Database'));
+  BaseModel.$container = ioc;
+  BaseModel.$configurator = Object.assign({}, ormConfig, config.database.orm);
+
+  return {
+    BaseModel,
+    scope,
+    ...decorators,
+  };
+});
+
+ioc.singleton('Adonis/Lucid/Schema', () => {
+  return Schema;
+});
+
+ioc.singleton('Adonis/Lucid/Factory', () => {
+  return new FactoryManager();
+});
+
+ioc.singleton('Adonis/Lucid/Seeder', () => {
+  return BaseSeeder;
 });
 
 const application = new Application(
