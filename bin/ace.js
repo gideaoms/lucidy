@@ -65,6 +65,8 @@ const config = Object.assign(
   }
 );
 
+global[Symbol.for('ioc.use')] = ioc.use.bind(ioc);
+
 ioc.singleton('Adonis/Core/Config', () => {
   return {
     get(key, defaultValue) {
