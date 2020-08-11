@@ -19,8 +19,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.0.5",
     "reflect-metadata": "^0.1.13",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "ts-node": "^8.10.2"
   },
   "peerDependencies": {
     "reflect-metadata": "^0.1.13"
@@ -28,12 +27,16 @@
   "dependencies": {
     "@adonisjs/ace": "^6.9.4",
     "@adonisjs/application": "^2.0.0",
+    "@adonisjs/assembler": "^2.1.5",
     "@adonisjs/events": "^4.0.1",
     "@adonisjs/fold": "^6.4.0",
     "@adonisjs/ioc-transformer": "^1.0.2",
     "@adonisjs/logger": "^2.1.0",
     "@adonisjs/lucid": "^8.3.1",
+    "@adonisjs/mrm-preset": "^2.4.0",
     "@adonisjs/profiler": "^4.0.1",
-    "nested-property": "^2.0.1"
+    "has-yarn": "^2.1.0",
+    "nested-property": "^2.0.1",
+    "typescript": "^3.9.7"
   }
 }

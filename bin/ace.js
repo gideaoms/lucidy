@@ -31,6 +31,7 @@ register({
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);
 const defaultMigrations = 'database/migrations';
+const appRoot = join(__dirname, '..', '..', '..');
 const config = Object.assign(
   {
     app: {
@@ -79,7 +80,7 @@ ioc.singleton('Adonis/Core/Application', () => {
   const namespacesMap = new Map();
 
   return {
-    appRoot: join(__dirname, '..', '..', '..'),
+    appRoot,
     configPath: () => '',
     namespacesMap,
   };
@@ -95,7 +96,7 @@ registrar
   .register();
 
 const application = new Application(
-  join(__dirname, '..', '..', '..'),
+  appRoot,
   ioc,
   {
     namespaces: {

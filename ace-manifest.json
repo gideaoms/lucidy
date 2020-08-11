@@ -1,4 +1,40 @@
 {
+  "build": {
+    "settings": {},
+    "commandPath": "./commands/build",
+    "commandName": "build",
+    "description": "Compile typescript code to Javascript. Optionally watch for file changes",
+    "args": [],
+    "flags": [
+      {
+        "name": "watch",
+        "propertyName": "watch",
+        "type": "boolean",
+        "description": "Watch filesystem and re-compile changes",
+        "alias": "w"
+      },
+      {
+        "name": "production",
+        "propertyName": "production",
+        "type": "boolean",
+        "description": "Build for production",
+        "alias": "prod"
+      },
+      {
+        "name": "client",
+        "propertyName": "client",
+        "type": "string",
+        "description": "Select the package manager to decide which lock file to copy to the build folder"
+      },
+      {
+        "name": "poll",
+        "propertyName": "poll",
+        "type": "boolean",
+        "description": "Detect file changes by polling files instead of listening to filesystem events",
+        "alias": "p"
+      }
+    ]
+  },
   "db:seed": {
     "settings": {
       "loadApp": true
