@@ -4,7 +4,19 @@ const { Ioc, Registrar } = require('@adonisjs/fold');
 const { Application } = require('@adonisjs/application');
 const { Kernel, Manifest } = require('@adonisjs/ace');
 const nested = require('nested-property');
-const databaseConfig = require('../../lucidy');
+// const databaseConfig = require('../../lucidy');
+const databaseConfig = {
+  connection: 'pg',
+  client: 'pg',
+  host: '127.0.0.1',
+  port: 3001,
+  user: 'postgres',
+  password: '123456',
+  database: 'postgres',
+  migrations: 'src/database/migrations',
+  models: 'src/database/models',
+  seeders: 'src/database/seeders',
+};
 
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);
@@ -95,7 +107,7 @@ const application = new Application(
 
 const kernel = new Kernel(application);
 
-const manifest = new Manifest(__dirname);
+const manifest = new Manifest(join(__dirname, '..'));
 
 kernel.flag(
   'help',

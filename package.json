@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
-  "bin": "./bin/ace.js",
+  "bin": {
+    "ace": "./bin/ace.js"
+  },
   "devDependencies": {
     "@adonisjs/ace": "^6.9.4",
     "@adonisjs/application": "^2.0.0",
