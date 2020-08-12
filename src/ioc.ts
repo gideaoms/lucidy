@@ -6,7 +6,7 @@ const ioc = new Ioc();
 const registrar = new Registrar(ioc);
 
 ioc.singleton('Adonis/Core/Config', () => {
-  const database = require(DATABASE_ROOT).default;
+  const database = require(DATABASE_ROOT);
   const app = {
     logger: {
       name: 'logger',
