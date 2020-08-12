@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import 'reflect-metadata';
 import { Application } from '@adonisjs/application';
 import { Kernel, Manifest } from '@adonisjs/ace';
 import ioc from './ioc';
