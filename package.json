@@ -4,12 +4,7 @@
   "main": "build/ignitor.js",
   "license": "MIT",
   "files": [
-    "build/.adonisrc.json",
-    "build/ace-manifest.json",
-    "build/ace.js",
-    "build/ignitor.js",
-    "build/ioc.js",
-    "build/registrar.js"
+    "build"
   ],
   "types": "./build/typings.d.ts",
   "scripts": {
