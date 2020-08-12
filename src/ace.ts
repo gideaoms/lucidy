@@ -25,6 +25,9 @@ export class Ace {
 
   private setupApplication() {
     const databaseDirectory = this.config.get('directories.database', 'database');
+    const migrationsDirectory = this.config.get('directories.migrations', `${databaseDirectory}/migrations`);
+    const seedersDirectory = this.config.get('directories.seeders', `${databaseDirectory}/seeders`);
+    const modelsDirectory = this.config.get('directories.models', 'models');
 
     return new Application(
       this.appRoot,
@@ -34,12 +37,12 @@ export class Ace {
           models: 'Models',
         },
         aliases: {
-          Models: this.config.get('directories.models', 'models'),
+          Models: modelsDirectory,
         },
         directories: {
           database: databaseDirectory,
-          migrations: this.config.get('directories.migrations', `${databaseDirectory}/migrations`),
-          seeds: this.config.get('directories.seeders', `${databaseDirectory}/seeders`),
+          migrations: migrationsDirectory,
+          seeds: seedersDirectory,
         },
       },
       {}
