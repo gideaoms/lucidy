@@ -1,5 +1,4 @@
 require('reflect-metadata');
-require('source-map-support').install({ handleUncaughtExceptions: false });
 
 const { Ignitor } = require('lucidy');
 
