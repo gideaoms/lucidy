@@ -52,6 +52,13 @@
     picomatch "^2.2.2"
     slash "^3.0.0"
 
+"@adonisjs/config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/config/-/config-1.1.0.tgz#006426328f97777a433d8607ee0ef8816165b8f6"
+  integrity sha512-Y67wzNNgbcaBEItlRAmjP/Je0knH2caYgkyHozKbTjrlzzTR6lZ9VCLoIiGBMr8FdPJZaIZ7ryHk++pXTN3XEg==
+  dependencies:
+    "@poppinss/utils" "^2.3.0"
+
 "@adonisjs/env@^1.0.18":
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/@adonisjs/env/-/env-1.0.18.tgz#537d9d943f4683e47cd832ad32ece1741b2e0280"
@@ -2587,11 +2594,6 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
-
-nested-property@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/nested-property/-/nested-property-2.0.1.tgz#52d569825f0cfd2c2d68170d7facedd4466614a5"
-  integrity sha512-oOs/zwh5Rw4vBDJxxFrEW066Su+VxLmIUkZkJB4d3pi6hjm/Kn97vWW1f+uGbLiBI8MeiATBj88OTgNpNq7/QA==
 
 node-emoji@^1.10.0:
   version "1.10.0"

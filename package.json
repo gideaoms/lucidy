@@ -36,6 +36,7 @@
     "@adonisjs/ace": "^6.9.4",
     "@adonisjs/application": "^2.0.0",
     "@adonisjs/assembler": "^2.1.5",
+    "@adonisjs/config": "^1.1.0",
     "@adonisjs/events": "^4.0.1",
     "@adonisjs/fold": "^6.4.0",
     "@adonisjs/ioc-transformer": "^1.0.2",
@@ -43,9 +44,9 @@
     "@adonisjs/lucid": "^8.3.1",
     "@adonisjs/mrm-preset": "^2.4.0",
     "@adonisjs/profiler": "^4.0.1",
+    "@poppinss/utils": "^2.5.2",
     "copyfiles": "^2.3.0",
     "has-yarn": "^2.1.0",
-    "nested-property": "^2.0.1",
     "typescript": "^3.9.7"
   }
 }
