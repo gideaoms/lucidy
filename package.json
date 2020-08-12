@@ -1,14 +1,20 @@
 {
   "name": "lucidy",
-  "version": "0.5.0",
-  "main": "build/ace.js",
+  "version": "0.6.0",
+  "main": "build/ignitor.js",
   "license": "MIT",
   "files": [
-    "build"
+    "build/.adonisrc.json",
+    "build/ace-manifest.json",
+    "build/ace.js",
+    "build/ignitor.js",
+    "build/ioc.js",
+    "build/registrar.js"
   ],
   "bin": {
     "ace": "build/ace.js"
   },
+  "types": "./build/typings.d.ts",
   "scripts": {
     "copyfiles": "copyfiles -f src/ace-manifest.json src/.adonisrc.json build",
     "build": "tsc && yarn copyfiles",
