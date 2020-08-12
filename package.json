@@ -1,16 +1,17 @@
 {
   "name": "lucidy",
-  "version": "0.1.0",
-  "main": "ace-manifest.json",
+  "version": "0.5.0",
+  "main": "build/ace.js",
   "license": "MIT",
   "files": [
     "build"
   ],
   "bin": {
-    "ace": "./build/ace.js"
+    "ace": "build/ace.js"
   },
   "scripts": {
-    "build": "tsc && copyfiles -f src/ace-manifest.json src/.adonisrc.json build",
+    "copyfiles": "copyfiles -f src/ace-manifest.json src/.adonisrc.json build",
+    "build": "tsc && yarn copyfiles",
     "prepare": "yarn build"
   },
   "devDependencies": {
