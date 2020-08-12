@@ -41,6 +41,7 @@
     "@adonisjs/lucid": "^8.3.1",
     "@adonisjs/mrm-preset": "^2.4.0",
     "@adonisjs/profiler": "^4.0.1",
+    "@poppinss/chokidar-ts": "^2.0.8",
     "@poppinss/utils": "^2.5.2",
     "copyfiles": "^2.3.0",
     "has-yarn": "^2.1.0",

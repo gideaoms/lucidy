@@ -1,5 +1,7 @@
+import { join } from 'path';
 import hasYarn from 'has-yarn';
 import { BaseCommand, flags } from '@adonisjs/ace';
+import { TypescriptCompiler } from '@poppinss/chokidar-ts';
 import utils from '../utils';
 
 export default class Build extends BaseCommand {
@@ -56,11 +58,21 @@ export default class Build extends BaseCommand {
   private async compile(serveApp: boolean) {
     const { Compiler } = await import('@adonisjs/assembler/build/src/Compiler');
     const compiler = new Compiler(utils.getNpmBuildPath(this.application.appRoot), false, [], this.logger);
+
+    // compiler.tsCompiler.ts.cwdusecwd = this.application.appRoot;
+    // compiler.tsCompiler.usecwd = this.application.appRoot;
+    // compiler.tsCompiler.use((a) => {
+    //   a.
+    //   //
+    // });
+
     const config = compiler.parseConfig();
 
     if (!config) {
       return false;
     }
+
+    config.options.rootDir = join(this.application.appRoot, '..', '..', '..');
 
     await compiler.cleanupBuildDirectory(config.options.outDir!);
     compiler.buildTypescriptSource(config);
