@@ -1,5 +1,6 @@
 import hasYarn from 'has-yarn';
 import { BaseCommand, flags } from '@adonisjs/ace';
+import utils from '../utils';
 
 export default class Build extends BaseCommand {
   public static commandName = 'build';
@@ -54,7 +55,7 @@ export default class Build extends BaseCommand {
 
   private async compile(serveApp: boolean) {
     const { Compiler } = await import('@adonisjs/assembler/build/src/Compiler');
-    const compiler = new Compiler(this.application.appRoot, false, [], this.logger);
+    const compiler = new Compiler(utils.getNpmBuildPath(this.application.appRoot), false, [], this.logger);
     const config = compiler.parseConfig();
 
     if (!config) {

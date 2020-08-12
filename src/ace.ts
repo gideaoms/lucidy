@@ -1,8 +1,8 @@
-import { join } from 'path';
 import { Application } from '@adonisjs/application';
 import { ConfigContract } from '@ioc:Adonis/Core/Config';
 import { Kernel, Manifest } from '@adonisjs/ace';
 import ioc from './ioc';
+import utils from './utils';
 
 export class Ace {
   private config: ConfigContract;
@@ -14,7 +14,7 @@ export class Ace {
   async handle(args: string[]) {
     const application = this.setupApplication();
     const kernel = new Kernel(application);
-    const manifest = new Manifest(join(this.appRoot, 'node_modules', 'lucidy', 'build'));
+    const manifest = new Manifest(utils.getNpmBuildPath(application.appRoot));
 
     this.addKernelFlags(kernel);
 
