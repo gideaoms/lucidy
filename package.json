@@ -4,14 +4,15 @@
   "main": "build/ignitor.js",
   "license": "MIT",
   "files": [
-    "build"
+    "build",
+    "alias.js"
   ],
   "bin": {
     "ace": "./build/ace.js"
   },
   "types": "./build/typings.d.ts",
   "scripts": {
-    "copyfiles": "copyfiles -f src/ace-manifest.json src/.adonisrc.json build",
+    "copyfiles": "copyfiles -f src/resources/ace-manifest.json src/resources/.adonisrc.json build",
     "build": "tsc && yarn copyfiles",
     "prepare": "yarn build"
   },

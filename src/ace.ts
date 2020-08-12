@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Application } from '@adonisjs/application';
 import { Kernel, Manifest } from '@adonisjs/ace';
 import ioc from './ioc';
