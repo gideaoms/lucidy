@@ -1,5 +1,0 @@
-require('reflect-metadata');
-
-const { Ignitor } = require('lucidy');
-
-new Ignitor(__dirname).ace().handle(process.argv.slice(2)).catch(console.error);

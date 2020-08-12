@@ -1,5 +1,4 @@
 import alias from 'module-alias';
+import { join } from 'path';
 
-alias.addAlias('@ioc:Adonis/Lucid', '@adonis/lucid/src');
-
-alias.addAlias('Adonis/Lucid/Orm', './lucid/orm');
+alias.addAlias('@ioc:Adonis/Lucid', join(__dirname, 'lucid'));
