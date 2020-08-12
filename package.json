@@ -11,9 +11,6 @@
     "build/ioc.js",
     "build/registrar.js"
   ],
-  "bin": {
-    "ace": "build/ace.js"
-  },
   "types": "./build/typings.d.ts",
   "scripts": {
     "copyfiles": "copyfiles -f src/ace-manifest.json src/.adonisrc.json build",
