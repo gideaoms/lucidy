@@ -14,7 +14,7 @@ export class Ace {
   async handle(args: string[]) {
     const application = this.setupApplication();
     const kernel = new Kernel(application);
-    const manifest = new Manifest(join(this.appRoot, 'node_modules', 'lucidy'));
+    const manifest = new Manifest(join(this.appRoot, 'node_modules', 'lucidy', 'build'));
 
     this.addKernelFlags(kernel);
 
