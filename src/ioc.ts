@@ -1,6 +1,6 @@
 import { Ioc, Registrar } from '@adonisjs/fold';
 import { Config } from '@adonisjs/config/build/src/Config';
-import { DATABASE_ROOT, APP_ROOT } from './constants';
+import { DATABASE_ROOT, APP_ROOT } from './config/constants';
 
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);

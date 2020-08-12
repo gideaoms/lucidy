@@ -2,7 +2,7 @@
 import { Application } from '@adonisjs/application';
 import { Kernel, Manifest } from '@adonisjs/ace';
 import ioc from './ioc';
-import { DATABASE, MIGRATIONS, SEEDERS, MODELS } from './constants';
+import { DATABASE, MIGRATIONS, SEEDERS, MODELS } from './config/database';
 
 const main = async (args: string[]) => {
   const app = new Application(
