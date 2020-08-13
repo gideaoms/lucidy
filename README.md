@@ -64,7 +64,7 @@ npx ace --help
 
 ## Documentation
 
-You can follow [this documentation](https://preview.adonisjs.com/guides/database/introduction)
+You can follow this [documentation](https://preview.adonisjs.com/guides/database/introduction)
 
 ## Author
 
