@@ -2,7 +2,7 @@
 
 # Lucidy
 
-Lucidy is an [Typescript](https://www.typescriptlang.org/) ORM created on top of [Lucid ORM](https://adonisjs.com/) (AdonisJS V5)
+Lucidy is a [Typescript](https://www.typescriptlang.org/) ORM created on top of [Lucid ORM](https://adonisjs.com/) (AdonisJS V5)
 
 ## Why
 
