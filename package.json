@@ -1,8 +1,15 @@
 {
   "name": "lucidy",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "main": "build/alias.js",
   "license": "MIT",
+  "author": {
+    "name": "Gideão MS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gideaoms/lucidy.git"
+  },
   "files": [
     "build/*"
   ],
