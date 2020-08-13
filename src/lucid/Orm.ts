@@ -1,5 +1,6 @@
 import ioc from '../ioc';
 
-const Orm = ioc.use('Adonis/Lucid/Orm');
+const { BaseModel, scope } = ioc.use('Adonis/Lucid/Orm');
 
-export default Orm;
+export { BaseModel, scope };
+export * from '@adonisjs/lucid/build/src/Orm/Decorators';

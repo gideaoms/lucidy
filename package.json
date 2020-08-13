@@ -4,7 +4,8 @@
   "main": "build/ignitor.js",
   "license": "MIT",
   "files": [
-    "build/**"
+    "build/**/*",
+    "alias.js"
   ],
   "bin": {
     "ace": "./build/ace.js"
