@@ -47,6 +47,7 @@
     "typescript": "^3.9.7"
   },
   "keywords": [
+    "lucidy",
     "adonis",
     "lucid",
     "typescript",
