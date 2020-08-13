@@ -6,7 +6,7 @@ const ioc = new Ioc();
 const registrar = new Registrar(ioc);
 
 ioc.singleton('Adonis/Core/Config', () => {
-  const database = require(DATABASE_ROOT);
+  const { database, directories } = require(DATABASE_ROOT);
   const app = {
     logger: {
       name: 'logger',
@@ -14,7 +14,11 @@ ioc.singleton('Adonis/Core/Config', () => {
       level: 'info',
     },
   };
-  return new Config({ app, database });
+  if (directories?.migrations) {
+    const paths = [directories.migrations];
+    database.connections[database.connection].migrations = { paths };
+  }
+  return new Config({ app, database, directories });
 });
 
 ioc.singleton('Adonis/Core/Application', () => {

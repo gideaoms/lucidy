@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import 'reflect-metadata';
 import './alias';
 import { register } from 'ts-node';
 import { Application } from '@adonisjs/application';

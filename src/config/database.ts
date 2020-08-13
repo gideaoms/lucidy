@@ -2,7 +2,7 @@ import ioc from '../ioc';
 
 const config = ioc.use('Adonis/Core/Config');
 
-export const DATABASE = config.get('directories.database', 'database');
+export const DATABASE = 'database';
 
 export const MIGRATIONS = config.get('directories.migrations', `${DATABASE}/migrations`);
 
