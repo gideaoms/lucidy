@@ -1,16 +1,38 @@
 {
   "name": "lucidy",
   "version": "0.6.0",
-  "main": "build/ignitor.js",
+  "main": "ace.js",
   "license": "MIT",
   "files": [
-    "build/**/*",
-    "alias.js"
+    "build/.adonisrc.json",
+    "build/ace-manifest.json",
+    "build/config/constants.d.ts",
+    "build/config/constants.js",
+    "build/config/database.d.ts",
+    "build/config/database.js",
+    "build/lucid/Database.d.ts",
+    "build/lucid/Database.js",
+    "build/lucid/Factory.d.ts",
+    "build/lucid/Factory.js",
+    "build/lucid/Orm.d.ts",
+    "build/lucid/Orm.js",
+    "build/lucid/Schema.d.ts",
+    "build/lucid/Schema.js",
+    "build/lucid/Seeder.d.ts",
+    "build/lucid/Seeder.js",
+    "build/ace.d.ts",
+    "build/ace.js",
+    "build/alias.d.ts",
+    "build/alias.js",
+    "build/ioc.d.ts",
+    "build/ioc.js",
+    "build/typings.d.ts",
+    "build/typings.js"
   ],
   "bin": {
-    "ace": "./build/ace.js"
+    "ace": "ace.js"
   },
-  "types": "./build/typings.d.ts",
+  "types": "typings.d.ts",
   "scripts": {
     "copyfiles": "copyfiles -f src/resources/ace-manifest.json src/resources/.adonisrc.json build",
     "build": "tsc && yarn copyfiles",
