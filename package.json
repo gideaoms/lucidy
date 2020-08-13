@@ -47,6 +47,7 @@
     "@adonisjs/lucid": "^8.3.1",
     "@adonisjs/profiler": "^4.0.1",
     "copyfiles": "^2.3.0",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }
 }

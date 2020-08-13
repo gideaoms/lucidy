@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 import 'reflect-metadata';
+import './alias';
+import { register } from 'ts-node';
 import { Application } from '@adonisjs/application';
 import { Kernel, Manifest } from '@adonisjs/ace';
 import ioc from './ioc';
 import { DATABASE, MIGRATIONS, SEEDERS, MODELS } from './config/database';
+import { APP_ROOT } from './config/constants';
+
+register({ transpileOnly: true });
 
 const main = async (args: string[]) => {
   const app = new Application(
-    this.appRoot,
+    APP_ROOT,
     ioc,
     {
       namespaces: {
