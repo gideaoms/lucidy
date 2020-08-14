@@ -1,4 +1,4 @@
-import ioc from '../ioc';
+import ioc from '../../ioc';
 
 const { BaseModel, scope } = ioc.use('Adonis/Lucid/Orm');
 

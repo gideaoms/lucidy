@@ -1,4 +1,4 @@
-import ioc from '../ioc';
+import ioc from '../../ioc';
 
 const Database = ioc.use('Adonis/Lucid/Database');
 

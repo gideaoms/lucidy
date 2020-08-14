@@ -1,4 +1,4 @@
-import ioc from '../ioc';
+import ioc from '../../ioc';
 
 const Schema = ioc.use('Adonis/Lucid/Schema');
 
