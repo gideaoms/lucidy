@@ -62,6 +62,14 @@ You can use all commands related to Lucid. Run this to see all options:
 npx ace --help
 ```
 
+### Typescript
+
+If your code editor does not recognize the Lucid imports, add the Lucid `types` in you `tsconfig.json`:
+
+```json
+"types": ["@adonisjs/lucid"]
+```
+
 ## Documentation
 
 You can follow this [documentation](https://preview.adonisjs.com/guides/database/introduction)
