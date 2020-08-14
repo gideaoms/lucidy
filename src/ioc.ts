@@ -1,12 +1,12 @@
 import { Ioc, Registrar } from '@adonisjs/fold';
 import { Config } from '@adonisjs/config/build/src/Config';
-import { DATABASE_ROOT, APP_ROOT } from './config/constants';
+import { LUCIDY_CONFIG_ROOT, APP_ROOT } from './config/constants';
 
 const ioc = new Ioc();
 const registrar = new Registrar(ioc);
 
 ioc.singleton('Adonis/Core/Config', () => {
-  const { database, directories } = require(DATABASE_ROOT);
+  const { database, directories } = require(LUCIDY_CONFIG_ROOT);
   const app = {
     logger: {
       name: 'logger',
